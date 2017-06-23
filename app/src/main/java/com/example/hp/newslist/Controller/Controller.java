@@ -1,14 +1,12 @@
-package com.example.hp.movielist;
+package com.example.hp.newslist.Controller;
 
 /**
  * Created by hp on 6/20/2017.
  */
 
-import android.app.Activity;
-import android.content.Context;
-
-import java.util.List;
-
+import com.example.hp.newslist.API_Interface.NewsAPI;
+import com.example.hp.newslist.Activity.NewsList;
+import com.example.hp.newslist.Model.News;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -24,11 +22,11 @@ public class Controller implements Callback<News> {
     static final String BASE_URL = "https://newsapi.org/v1/";
     public NewsList newsList;
 
-    public Controller(){
+    public Controller() {
         newsList = null;
     }
 
-    public Controller(NewsList newsList){
+    public Controller(NewsList newsList) {
         this.newsList = newsList;
     }
 
@@ -50,7 +48,7 @@ public class Controller implements Callback<News> {
 
     @Override
     public void onResponse(Call<News> call, Response<News> response) {
-        if(response.isSuccessful()) {
+        if (response.isSuccessful()) {
             News news = response.body();
             newsList.createView(news);
         } else {
@@ -64,7 +62,7 @@ public class Controller implements Callback<News> {
         t.printStackTrace();
     }
 
-    public void cancel(){
+    public void cancel() {
         call.cancel();
     }
 }

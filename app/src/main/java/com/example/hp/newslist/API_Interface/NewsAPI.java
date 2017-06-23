@@ -1,10 +1,10 @@
-package com.example.hp.movielist;
+package com.example.hp.newslist.API_Interface;
 
 /**
  * Created by hp on 6/20/2017.
  */
 
-import java.util.List;
+import com.example.hp.newslist.Model.News;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

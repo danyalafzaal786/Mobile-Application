@@ -1,15 +1,16 @@
-package com.example.hp.movielist;
+package com.example.hp.newslist.Activity;
 
 import android.content.Intent;
 import android.graphics.Paint;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
-import android.text.util.Linkify;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.hp.newslist.Model.Articles;
+import com.example.hp.newslist.R;
 import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
@@ -20,18 +21,26 @@ import butterknife.Unbinder;
 public class ArticleInfo extends AppCompatActivity {
 
     Articles article;
-    @BindView(R.id.title) TextView title;
-    @BindView(R.id.author) TextView author;
-    @BindView(R.id.description) TextView description;
-    @BindView(R.id.date) TextView date;
-    @BindView(R.id.link) TextView link;
-    @BindView(R.id.imageInfo) ImageView imageView;
+    @BindView(R.id.title)
+    TextView title;
+    @BindView(R.id.author)
+    TextView author;
+    @BindView(R.id.description)
+    TextView description;
+    @BindView(R.id.date)
+    TextView date;
+    @BindView(R.id.link)
+    TextView link;
+    @BindView(R.id.imageInfo)
+    ImageView imageView;
+
     @OnClick(R.id.link)
     public void onClick() {
         Intent intent = new Intent(ArticleInfo.this, LinkToNewsUrl.class);
         intent.putExtra("url", article.getUrl());
         startActivity(intent);
     }
+
     private Unbinder unbinder;
 
     @Override
@@ -48,7 +57,7 @@ public class ArticleInfo extends AppCompatActivity {
 
         author.setText(article.getAuthor());
 
-        Picasso.with(this.getBaseContext()).load(article.getImageUrl()).placeholder(R.drawable.defaults).resize(300,300).centerCrop().into(imageView);
+        Picasso.with(this.getBaseContext()).load(article.getImageUrl()).placeholder(R.drawable.defaults).resize(300, 300).centerCrop().into(imageView);
 
         description.setText(article.getDescription());
 
@@ -65,7 +74,8 @@ public class ArticleInfo extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == android.R.id.home) {
-            onBackPressed();  return true;
+            onBackPressed();
+            return true;
         }
 
         return super.onOptionsItemSelected(item);

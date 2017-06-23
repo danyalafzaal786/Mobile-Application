@@ -1,4 +1,4 @@
-package com.example.hp.movielist;
+package com.example.hp.newslist.Model;
 
 import java.io.Serializable;
 

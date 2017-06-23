@@ -1,4 +1,4 @@
-package com.example.hp.movielist;
+package com.example.hp.newslist;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

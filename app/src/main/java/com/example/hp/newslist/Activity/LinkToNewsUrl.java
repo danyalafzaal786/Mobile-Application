@@ -1,6 +1,5 @@
-package com.example.hp.movielist;
+package com.example.hp.newslist.Activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,13 +9,16 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
 
+import com.example.hp.newslist.R;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 public class LinkToNewsUrl extends AppCompatActivity {
 
-    @BindView(R.id.webview) WebView webView;
+    @BindView(R.id.webview)
+    WebView webView;
     private Unbinder unbinder;
 
     @Override
@@ -48,7 +50,8 @@ public class LinkToNewsUrl extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == android.R.id.home) {
-            onBackPressed();  return true;
+            onBackPressed();
+            return true;
         }
 
         return super.onOptionsItemSelected(item);

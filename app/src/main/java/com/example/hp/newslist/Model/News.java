@@ -1,8 +1,9 @@
-package com.example.hp.movielist;
+package com.example.hp.newslist.Model;
+
+import com.example.hp.newslist.Model.Articles;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by hp on 6/20/2017.
@@ -18,6 +19,5 @@ public class News implements Serializable {
     }
 
     private ArrayList<Articles> articles;
-
 
 }
